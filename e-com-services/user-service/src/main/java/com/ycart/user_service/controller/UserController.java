@@ -11,6 +11,11 @@ import java.util.List;
 @RequestMapping("/user")
 public class UserController {
 
+    @GetMapping("/health")
+    public String health() {
+        return "User Service Running";
+    }
+
     @Autowired
     private UserService userService;
 
@@ -46,6 +51,7 @@ public class UserController {
 
     @GetMapping("/findById")
     public User findId(Long id) {
+
         return userService.findId(id);
     }
 
